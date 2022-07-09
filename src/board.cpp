@@ -1,5 +1,9 @@
 #include "board.h"
 #include <algorithm>
+#include <cstdio>
+#include <iterator>
+#include <type_traits>
+#include <iostream>
 
 /*
  * initializes the board
@@ -35,8 +39,30 @@ void Board::reset_pieces(){
 	}
 }
 
+
+unsigned char PIECE_VALS[] = {'W', 'w', ' ', 'b', 'B'};
+unsigned char char_val(PieceType p){
+	return PIECE_VALS[p + 2];
+}
+
 /*
  * prints the board to the console. (8x8)
  */
-void print(){
+void Board::print(){
+	bool black_first = true;
+
+	printf("=================================\n");
+	for(auto row : arr){
+		for (auto val : row){
+			if (black_first)
+				printf("| %c | @ ", char_val(val));
+			else
+				printf("| @ | %c ", char_val(val));
+		}
+		printf("|\n=================================\n");
+
+		black_first = !black_first;
+
+	}
 }
+
