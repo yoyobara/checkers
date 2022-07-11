@@ -35,6 +35,8 @@ class Board {
 
 		PieceType get_piece(Spot s);
 		Spot get_adjacent(Spot s, AdjIndex idx);
+		PieceType get_adjacent_piece(Spot s, AdjIndex idx);
+
 		void reset_pieces();
 		void print();
 

@@ -56,8 +56,8 @@ void Board::reset_pieces(){
 }
 
 
-unsigned char PIECE_VALS[] = {'W', 'w', ' ', 'b', 'B'};
-unsigned char char_val(PieceType p){
+char PIECE_VALS[] = {'W', 'w', ' ', 'b', 'B'};
+char char_val(PieceType p){
 	return PIECE_VALS[p + 2];
 }
 
@@ -65,7 +65,7 @@ unsigned char char_val(PieceType p){
  * prints the board to the console. (8x8)
  */
 void Board::print(){
-	bool black_first = true;
+	bool black_first = false;
 
 	printf("=================================\n");
 	for(auto row : arr){
