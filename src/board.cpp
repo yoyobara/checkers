@@ -6,6 +6,22 @@
 #include <iostream>
 
 /*
+ * spot comparison
+ */
+bool Spot::operator==(const Spot o)
+{
+	return x == o.x && y == o.y;
+}
+
+/*
+ * spot in bound check
+ */
+bool Spot::in_bounds()
+{
+	return (0 <= x && x < COLUMNS) && (0 <= y && y < ROWS);
+}
+
+/*
  * initializes the board
  */
 Board::Board()

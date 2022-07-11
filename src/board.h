@@ -6,9 +6,14 @@
 
 typedef char PieceType;
 
-struct Spot {
+class Spot {
+	public:
+
 	char x;
 	char y;
+
+	bool operator==(const Spot o);
+	bool in_bounds();
 };
 
 // piece types
@@ -18,12 +23,8 @@ const PieceType WHITE_QUEEN = -2;
 const PieceType BLACK_PIECE = 1;
 const PieceType BLACK_QUEEN = 2;
 
-enum AdjIndex {
-	IDX_A,
-	IDX_B,
-	IDX_C,
-	IDX_D
-};
+// board index. (look at doc)
+typedef char AdjIndex;
 
 const char ROWS = 8;
 const char COLUMNS = 4;
