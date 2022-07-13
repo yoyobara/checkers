@@ -33,40 +33,45 @@ class Board {
 	public:
 
 		/*
-		 initializes board 
-		*/
+		 *initializes board 
+		 */
 		Board();
 
 		/*
-		 get a piece on the board by spot 
-		*/
+		 * get a piece on the board by spot 
+		 */
 		PieceType get_piece(Spot s);
 
 		/*
-		 gets an adjacent piece on a real checkers board 
-		*/
+		 *gets an adjacent piece on a real checkers board 
+		 */
 		Spot get_adjacent(Spot s, AdjIndex idx);
 		
 		/*
-		 get_adjacent + get_piece 
-		*/
+		 * get_adjacent + get_piece 
+		 */
 		PieceType get_adjacent_piece(Spot s, AdjIndex idx);
 
 		/*
-		 resets the position of the pieces to the default 
-		*/
+		 * moves a piece on the board from spot src to spot dest.
+		 */
+		void move_on_board(Spot src, Spot dest);
+
+		/*
+		 * resets the position of the pieces to the default 
+		 */
 		void reset_pieces();
 
 		/*
-		 prints the board to the console 
-		*/
+		 * prints the board to the console 
+		 */
 		void print();
 
 	private:
 
 		/*
-		 representing the 8x8 checkers board using a 8x4 array. 
-		*/
+		 * representing the 8x8 checkers board using a 8x4 array. 
+		 */
 		std::array<std::array<PieceType, COLUMNS>, ROWS> arr;
 };
 
