@@ -40,7 +40,7 @@ class Board {
 		/*
 		 * get a piece on the board by spot 
 		 */
-		PieceType get_piece(Spot s);
+		PieceType& get_piece(Spot s);
 
 		/*
 		 *gets an adjacent piece on a real checkers board 
@@ -53,7 +53,8 @@ class Board {
 		PieceType get_adjacent_piece(Spot s, AdjIndex idx);
 
 		/*
-		 * moves a piece on the board from spot src to spot dest.
+		 * moves a piece on the board from spot src to spot dest. (no checking
+		 * or anything)
 		 */
 		void move_on_board(Spot src, Spot dest);
 

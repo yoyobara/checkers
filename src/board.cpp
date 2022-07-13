@@ -32,7 +32,7 @@ Board::Board()
 /*
  * gets a piece on the board by its spot
  */
-PieceType Board::get_piece(Spot s){
+PieceType& Board::get_piece(Spot s){
 	return arr.at(s.y).at(s.x);
 }
 
@@ -82,3 +82,7 @@ void Board::print(){
 	}
 }
 
+
+void Board::move_on_board(Spot src, Spot dest){
+	get_piece(dest) = get_piece(src);
+}
