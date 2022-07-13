@@ -29,5 +29,7 @@ Spot Board::get_adjacent(Spot s, AdjIndex idx){
 }
 
 PieceType Board::get_adjacent_piece(Spot s, AdjIndex idx){
-	return get_piece(get_adjacent(s, idx));
+	Spot adj = get_adjacent(s, idx);
+	if (!adj.in_bounds()) throw "out of bounds";
+	return get_piece(adj);
 }
