@@ -1,4 +1,4 @@
 # simple compile + run script
 
-g++ src/*.cpp
+g++ -std=c++17 src/*.cpp
 ./a.out
